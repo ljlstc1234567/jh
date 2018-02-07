@@ -1,0 +1,19 @@
+<template>
+  <div>
+  	加盟
+  </div>
+</template>
+<script>
+export default {
+   data(){
+   	return {
+   		msg:"报错"
+   	}
+   },
+  created(){
+  	this.msg = this.query.msg ;
+  }
+};
+</script>
+<style lang="less" scoped>
+</style>
