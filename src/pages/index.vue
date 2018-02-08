@@ -4,14 +4,16 @@
   </div>
 </template>
 <script>
+  import mixin from './mixin'; 
 export default {
    data(){
    	return {
-   		msg:"报错"
+   		
    	}
    },
-  created(){
-  	this.msg = this.query.msg ;
+   mixins: [mixin],
+  beforeCreate(){
+  	//this.$store.commit('CHANGE_TITLE','首页') ;
   }
 };
 </script>

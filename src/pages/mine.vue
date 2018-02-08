@@ -1,6 +1,6 @@
 <template>
-  <div>
-  	加盟
+  <div style="padding:10px;">
+  	个人中心
   </div>
 </template>
 <script>
@@ -13,10 +13,7 @@ export default {
    },
    mixins: [mixin],
   beforeCreate(){
-  	//this.$store.commit('CHANGE_TITLE','加盟') ;
-  },
-  created(){
-    this.$loading.show();
+  	//this.$store.commit('CHANGE_TITLE','我的') ;
   }
 };
 </script>

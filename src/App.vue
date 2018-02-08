@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <jheader :title="title">
+      <a href="" slot="rightMenu">2</a>
+    </jheader>
     <transition :name="transitionName" mode="out-in">
       <router-view/>
     </transition>
@@ -8,6 +11,8 @@
 </template>
 <script>
 import BottomBar from '@/components/BottomBar';
+import jheader from '@/components/jheader';
+import { mapGetters } from 'vuex'
 export default {
   name: 'App',
   data(){
@@ -16,24 +21,40 @@ export default {
       active:1
     }
   },
+  computed: {
+    ...mapGetters([
+      'title'
+    ])
+  },
   created(){
-    console.log(this.$route.name);
+    this.changeActive(this.$route.name) ;
   },
   components: {
-    BottomBar
+    BottomBar,
+    jheader
   },
   watch: {
     '$route' (to, from) {
-      //console.log(to);
-      if("index,module".includes(to.name)){
+      this.changeActive(to.name) ;
+    }
+  },
+  methods:{
+    changeActive(name){
+      if("index,module".indexOf(name)!=-1){
         this.active = 1 ;
       }
-      if("league".includes(to.name)){
+      if("league".indexOf(name)!=-1){
         this.active = 2 ;
       }
-      // const toDepth = to.path.split('/').length
-      // const fromDepth = from.path.split('/').length
-      // this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      if("special".indexOf(name)!=-1){
+        this.active = 3 ;
+      }
+      if("cart".indexOf(name)!=-1){
+        this.active = 4 ;
+      }
+      if("mine".indexOf(name)!=-1){
+        this.active = 5 ;
+      }
     }
   }
 }

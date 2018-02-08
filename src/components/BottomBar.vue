@@ -12,11 +12,11 @@
   		<i class="icon"></i>
   		专题
   	</router-link>
-  	<router-link to="/" :class="active==4?'active':''">
+  	<router-link to="/cart" :class="active==4?'active':''">
   		<i class="icon"></i>
   		购物车
   	</router-link>
-  	<router-link to="/" :class="active==5?'active':''">
+  	<router-link to="/mine" :class="active==5?'active':''">
   		<i class="icon"></i>
   		我的
   	</router-link>
@@ -28,7 +28,7 @@ export default {
   	 active: {
       type: Number,
       default: 1
-    },
+    }
   },
   data() {
     return {
@@ -55,6 +55,7 @@ export default {
   white-space : nowrap ;
   a{
   	display: inline-block;
+    float: left;
   	width: 20%;
   	color: #666;
   	font-size: 12px;
