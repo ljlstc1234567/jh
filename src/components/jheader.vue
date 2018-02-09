@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-  	<a href="javascript:;"><</a>
+  	<a href="javascript:;" @click="back" class="back"><i v-if="visible"></i></a>
   	<span>{{title}}</span>
   	<div>
   	<slot name="rightMenu" />
@@ -15,13 +15,23 @@ export default {
       default: ''
     }
    },
+   computed: {
+      visible(){
+        return this.$route.path.split("/").length>2 ;
+      }
+   },
    data(){
    	return {
-   		//msg:"报错"
    	}
    },
   created(){
+    //console.log(this.$route.path.split("/")) ;
   	//this.msg = this.query.msg ;
+  },
+  methods:{
+    back(){
+      this.$route.back() ;
+    }
   }
 };
 </script>
@@ -37,10 +47,27 @@ export default {
 	height: 50px;
 	line-height: 50px;
 	background-color: @main-color;
+  z-index: 1000;
 	a,div{
 		width: 50px;
+    line-height: 50px;
 	}
+  .back{
+    &:active{
+      background-color: darken(@main-color, 10%);
+    }
+    i{
+      .bgreset();
+      display: inline-block;
+      margin-top: 10px;
+      width: 30px;
+      height: 30px;
+      background-image: url(../../static/imgs/back.png);
+    }
+    
+  }
 	span{
+    color: #fff;
 		flex: auto;
 		-webkit-flex: auto;
 	}

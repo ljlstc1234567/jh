@@ -3,13 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import store from './store'
-
+import api from './api'
 import router from './router';
-import progress from './components/progress';
 import loading from './components/loading';
 import "../static/style.less";
 import mixin from "./mixin";
 import FastClick from 'fastclick'
+import progress from './components/progress';
 
 //移动端点击延迟补丁
 if ('addEventListener' in document) {
@@ -20,18 +20,18 @@ if ('addEventListener' in document) {
 
 Vue.config.productionTip = false;
 
-
 Vue.prototype.$progress = progress;
 Vue.prototype.$loading = loading;
-
+Vue.prototype.$model = api;
+// api.getTest({optCode:"getNotice"}).then(data=>{
+// 	console.log(data) ;
+// })
 mixin(Vue) ;
 
 router.beforeEach((to, from, next) => {
 	//改变标题
 	document.title = to.meta.title||"憬弘" ;
 	store.commit('CHANGE_TITLE',to.meta.title||"憬弘") ;
-
-	//出现浏览器进度条
 	progress.show() ;
     next() ;
 });

@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+Vue.use(Router);
+
 const index  = () => import('@/pages/index')
-const league = () => import('@/pages/league')
+const league = () => import('@/pages/league') 
 const special = () => import('@/pages/special')
 const module = () => import('@/pages/module')
 const cart = () => import('@/pages/cart')
 const mine = () => import('@/pages/mine')
 
-Vue.use(Router)
 
 export default new Router({
+  //mode:"history",
   routes: [
     {
       path: '/',

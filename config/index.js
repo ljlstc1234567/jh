@@ -6,11 +6,18 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://m.jh-buy.com',
+        changeOrigin: true,
+        pathRewrite: {                //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
+          '^/api': ''
+        }   
+      }
+    },
 
     // Various Dev Server settings
     host: '10.0.4.206', // can be overwritten by process.env.HOST

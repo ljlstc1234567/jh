@@ -4,19 +4,18 @@
   </div>
 </template>
 <script>
-  import mixin from './mixin'; 
 export default {
    data(){
    	return {
    		
    	}
    },
-   mixins: [mixin],
   beforeCreate(){
   	//this.$store.commit('CHANGE_TITLE','加盟') ;
   },
   created(){
-    this.$loading.show();
+    //this.$loading.show();
+    setTimeout(()=>{this.$progress.hide()},0);
   }
 };
 </script>

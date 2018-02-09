@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <jheader :title="title">
-      <a href="" slot="rightMenu">2</a>
+      <a href="" slot="rightMenu"></a>
     </jheader>
     <transition :name="transitionName" mode="out-in">
       <router-view/>
@@ -74,10 +74,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  img {
-    width: 600px;
-  }
+  margin-top: 50px;
 }
 
 </style>
