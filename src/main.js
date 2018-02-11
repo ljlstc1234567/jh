@@ -10,6 +10,7 @@ import "../static/style.less";
 import mixin from "./mixin";
 import FastClick from 'fastclick'
 import progress from './components/progress';
+import VueLazyload from 'vue-lazyload';
 
 //移动端点击延迟补丁
 if ('addEventListener' in document) {
@@ -17,6 +18,14 @@ if ('addEventListener' in document) {
         FastClick.attach(document.body);
     }, false);
 }
+
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: '../static/imgs/taller.png',
+  loading: '../static/imgs/taller.png',
+  attempt: 1,
+  throttleWait:300
+});
 
 Vue.config.productionTip = false;
 

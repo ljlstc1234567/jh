@@ -7,12 +7,36 @@
     <!-- Optional controls -->
   </swiper>
   <h3>憬弘特色</h3>
+  <div class="module">
+    <router-link to="/">
+      <i class="icon1"></i>
+      <p>丰富</p>
+    </router-link>
+    <router-link to="/">
+      <i class="icon2"></i>
+      <p>丰富</p>
+    </router-link>
+    <router-link to="/">
+      <i class="icon1"></i>
+      <p>丰富</p>
+    </router-link>
+    <router-link to="/">
+      <i class="icon2"></i>
+      <p>丰富</p>
+    </router-link>
+  </div>
   <h3>羊绒外套<router-link to="/">更多></router-link></h3>
+  <div>
+    <goodsCard></goodsCard>
+    <goodsCard></goodsCard>
+    <goodsCard></goodsCard>
+  </div>
   </div>
 </template>
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import goodsCard from '@/components/goodsCard'
 export default {
   data() {
     return {
@@ -26,7 +50,8 @@ export default {
   },
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    goodsCard
   },
   computed: {
       swiper() {
@@ -45,6 +70,31 @@ export default {
 .myswiper{
   img{
     width: 100%;
+  }
+}
+.module{
+  display: flex;
+  display: -webkit-flex;
+  text-align: center;
+  a{
+    flex-basis: 25%;
+    padding: 10px;
+
+    font-size: 14px;
+    color: #555;
+    i{
+      box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      .bgreset();
+      padding-top: 100%;
+      display: block;
+    }
+    .icon1{
+      background-image: url('../../static/imgs/80s.png')
+    }
+    .icon2{
+      background-image: url('../../static/imgs/90s.png')
+    }
   }
 }
 h3{
