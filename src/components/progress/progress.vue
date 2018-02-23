@@ -38,9 +38,9 @@ export default {
   background: -moz-linear-gradient(right, lighten(@main-color, 30%), lighten(@main-color, 20%));
   background: linear-gradient(to right, lighten(@main-color, 30%), lighten(@main-color, 20%));
   &.animate{
-    -webkit-animation: going 2s forwards;
-    -o-animation: going 2s forwards;
-    animation: going 2s forwards;
+    -webkit-animation: going 1s forwards;
+    -o-animation: going 1s forwards; 
+    animation: going 1s forwards;
   }
 }
 @-webkit-keyframes going {

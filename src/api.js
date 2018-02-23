@@ -21,4 +21,6 @@ const get = (url,param) => instance.post(url+"?"+qs.stringify(param));
 
 export default {
 	getTest:(param)=>post("/user/browsing/UserBrowsingMsgOpt.action",param),
+	getImg:(param)=>post("/php/goods/get_img.php",param),
+	goodsInfo:(param)=>post("/user/browsing/UserBrowsingGoodsOpt.action",param),
 }
