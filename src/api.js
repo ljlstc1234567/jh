@@ -1,5 +1,9 @@
-import axios from 'axios'
+import axios from 'axios';
 import qs from 'qs';
+import Vue from 'vue'
+import  { ToastPlugin } from 'vux';
+Vue.use(ToastPlugin);
+
 
 const instance = axios.create({
   baseURL:"/api",
@@ -9,11 +13,20 @@ const instance = axios.create({
 
 instance.interceptors.response.use(function(response){
  //对响应数据做些事
- //console.log(response) ;
- return response.data;
+ 
+ if(response.data.status != 1){
+ 	Vue.$vux.toast.text(response.data.msg, 'middle');
+ 	return {dataset:{}}
+ }else{
+ 	return response.data;
+ }
 },function(error){
- //请求错误时做些事
- return Promise.reject(erro);
+	Vue.$vux.toast.show({
+	 	text:'服务器出错',
+	 	type:'warn'
+	}) ;
+	 //请求错误时做些事
+	 return Promise.reject(erro);
 });
 
 const post = (url,param) => instance.post(url,qs.stringify(param));

@@ -28,7 +28,7 @@ Vue.use(VueLazyload, {
 });
 
 Vue.config.productionTip = false;
-
+console.log(Vue.component("ToastPlugin")) ;
 Vue.prototype.$progress = progress;
 Vue.prototype.$loading = loading;
 Vue.prototype.$model = api;
