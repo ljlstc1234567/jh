@@ -19,6 +19,7 @@
         选择商品:点击选择商品规格
       </cell-box>
     </group>
+    <pre class="detail" v-html="goodsDetail"></pre>
   </div>
 </template>
 <script>
@@ -36,7 +37,8 @@ export default {
         }
       },
       banner:[],
-      goodsInfo:{}
+      goodsInfo:{},
+      goodsDetail:""
     }
   },
   components: {
@@ -66,6 +68,12 @@ export default {
       //this.banner = data.dataset.path ;
       this.goodsInfo = data.dataset ;
     });
+
+    //获取商品详细信息
+    this.$model.goodsDetail({goodsId: this.$route.params.id}).then(data => {
+      //this.banner = data.dataset.path ;
+      this.goodsDetail = data.dataset.detail ;
+    })
     
   }
 };
@@ -131,5 +139,15 @@ export default {
 		color: #aaa;
 		margin-right: 5px;
 	}
+}
+.detail {
+	word-wrap: break-word;
+    word-break: break-all;
+}
+
+</style>
+<style lang="less">
+.detail img{
+	max-width: 100%;
 }
 </style>
