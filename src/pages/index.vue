@@ -5,7 +5,7 @@
     <swiper-slide v-if="index.indexOf('banner')!=-1" v-for="(item,index) in goods" :key="index"><img @click="go('/goodsDetail/'+index)" :src="item.cover" alt=""></swiper-slide>
     <!-- Optional controls -->
   </swiper>
-  <h3>热门商品123</h3>
+  <h3>热门商品</h3>
   <div>
     <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1" v-for="(item,index) in goods"  :key="index">
     <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
