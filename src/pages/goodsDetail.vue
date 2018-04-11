@@ -7,25 +7,20 @@
     </swiper>
     <div class="goods-header">
     	<div class="title"><span v-if="goodsInfo.isJhSelf==1">[自营]</span>{{goodsInfo.goodsName}}</div>
-    	<a href="javascript:;" class="goods-favirate"><i></i></a>
+    	<!-- <a href="javascript:;" class="goods-favirate"><i></i></a> -->
     </div>
     <h2 class="goods-price">￥{{goodsInfo.goodsPrice}}</h2>
-	<flexbox class="goods-sale">
+	 <flexbox class="goods-sale">
       <flexbox-item><span>编码&nbsp;:</span>{{goodsInfo.goodsSn}}</flexbox-item>
       <flexbox-item><span>销量&nbsp;:</span>{{goodsInfo.sellCount}}件</flexbox-item>
     </flexbox>
-    <group >
-      <cell-box is-link class="goods-select">
-        选择商品:点击选择商品规格
-      </cell-box>
-    </group>
-    <pre class="detail" v-html="goodsDetail"></pre>
   </div>
 </template>
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import goodsCard from '@/components/goodsCard'
+import goods from '../../data/goods.json'
 import { Group, Cell, CellBox,Flexbox ,FlexboxItem } from 'vux'
 export default {
   data() {
@@ -54,26 +49,36 @@ export default {
     swiper() {
       return this.$refs.mySwiper.swiper
     }
+
   },
   created() {
   	setTimeout(() => { this.$progress.hide() }, 0);
+    console.log(goods) ;
+    this.banner = goods["id"+this.$route.params.id].banner
+    this.goodsInfo = goods["id"+this.$route.params.id].goodsInfo
   },
   beforeCreate() {
   	//获取banner信息
-    this.$model.getImg({ imgType: 'appMain', goodsId: this.$route.params.id }).then(data => {
-      this.banner = data.dataset.path ;
-    });
+    // this.$model.getImg({ imgType: 'appMain', goodsId: this.$route.params.id }).then(data => {
+      // this.banner = ["http://www.jh-buy.com/appTpls/app/wapindex/banner/1/img/6fa518ff4fed11b705e53d45d2ce51ac.jpg?0.3154167084707382","http://www.jh-buy.com/appTpls/app/wapindex/banner/1/img/51cc1fe2482aab10aaf40190bc8f5549.jpg?0.10799478418561459"] ;
+    // });
     //获取商品基本信息
-    this.$model.goodsInfo({optCode:'get', goodsId: this.$route.params.id }).then(data => {
+    // this.$model.goodsInfo({optCode:'get', goodsId: this.$route.params.id }).then(data => {
       //this.banner = data.dataset.path ;
-      this.goodsInfo = data.dataset ;
-    });
+      // this.goodsInfo = {
+      //   goodsName:"衣服名称",
+      //   goodsPrice:"100",
+      //   goodsSn:"10001",
+      //   sellCount:"4000"
+
+      // } ;
+    // });
 
     //获取商品详细信息
-    this.$model.goodsDetail({goodsId: this.$route.params.id}).then(data => {
-      //this.banner = data.dataset.path ;
-      this.goodsDetail = data.dataset.detail ;
-    })
+    // this.$model.goodsDetail({goodsId: this.$route.params.id}).then(data => {
+    //   //this.banner = data.dataset.path ;
+    //   this.goodsDetail = data.dataset.detail ;
+    // })
     
   }
 };

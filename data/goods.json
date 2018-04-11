@@ -1,0 +1,21 @@
+{
+	"id1":{
+		"banner":["../../static/imgs/1.jpg","../../static/imgs/2.jpg"],
+		"goodsInfo":{
+			"goodsName":"衣服名称",
+	        "goodsPrice":"100",
+	        "goodsSn":"10001",
+	        "sellCount":"4000"
+		}
+	},
+
+	"id2":{
+		"banner":["../../static/imgs/3.jpg","../../static/imgs/4.jpg"],
+		"goodsInfo":{
+			"goodsName":"衣服名称",
+	        "goodsPrice":"100",
+	        "goodsSn":"10001",
+	        "sellCount":"4000"
+		}
+	}
+}

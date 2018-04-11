@@ -6,11 +6,11 @@
     <transition :name="transitionName" mode="out-in">
       <router-view/>
     </transition>
-    <BottomBar :active="active"></BottomBar>
+    <!-- <BottomBar :active="active"></BottomBar> -->
   </div>
 </template>
 <script>
-import BottomBar from '@/components/BottomBar';
+// import BottomBar from '@/components/BottomBar';
 import jheader from '@/components/jheader';
 import { mapGetters } from 'vuex'
 export default {
@@ -30,7 +30,7 @@ export default {
     this.changeActive(this.$route.name) ;
   },
   components: {
-    BottomBar,
+    // BottomBar,
     jheader
   },
   watch: {

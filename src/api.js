@@ -36,6 +36,5 @@ export default {
   getTest: (param) => post("/user/browsing/UserBrowsingMsgOpt.action", param),
   getImg: (param) => post("/php/goods/get_img.php", param),
   goodsInfo: (param) => post("/user/browsing/UserBrowsingGoodsOpt.action", param),
-  goodsDetail:(param) => get("/php/goods/get_goods_detail.php", param),
-  
+  goodsDetail:(param) => get("/php/goods/get_goods_detail.php", param)
 }

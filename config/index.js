@@ -9,15 +9,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/api': {
-        target: 'http://m.jh-buy.com',
-        changeOrigin: true,
-        pathRewrite: {                //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
-          '^/api': ''
-        }   
-      }
-    },
+    // proxyTable: {
+    //   '/api': {
+    //     target: 'http://m.jh-buy.com',
+    //     changeOrigin: true,
+    //     pathRewrite: {                //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
+    //       '^/api': ''
+    //     }   
+    //   }
+    //},
 
     // Various Dev Server settings
     host: '127.0.0.1', // can be overwritten by process.env.HOST
@@ -49,7 +49,6 @@ module.exports = {
 
     cssSourceMap: true
   },
-
   build: {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),

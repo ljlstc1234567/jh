@@ -6,25 +6,6 @@
     <swiper-slide><img src="http://www.jh-buy.com/appTpls/app/wapindex/banner/1/img/51cc1fe2482aab10aaf40190bc8f5549.jpg?0.10799478418561459" alt=""></swiper-slide>
     <!-- Optional controls -->
   </swiper>
-  <h3>憬弘特色</h3>
-  <div class="module">
-    <router-link to="/">
-      <i class="icon1"></i>
-      <p>丰富</p>
-    </router-link>
-    <router-link to="/">
-      <i class="icon2"></i>
-      <p>丰富</p>
-    </router-link>
-    <router-link to="/">
-      <i class="icon1"></i>
-      <p>丰富</p>
-    </router-link>
-    <router-link to="/">
-      <i class="icon2"></i>
-      <p>丰富</p>
-    </router-link>
-  </div>
   <h3>羊绒外套<router-link to="/">更多></router-link></h3>
   <div>
     <goodsCard></goodsCard>
