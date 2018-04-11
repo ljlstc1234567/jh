@@ -2,15 +2,14 @@
   <div>
     <swiper class="myswiper" :options="swiperOption" ref="mySwiper" @someSwiperEvent="">
     <!-- slides -->
-    <swiper-slide><img src="http://www.jh-buy.com/appTpls/app/wapindex/banner/1/img/6fa518ff4fed11b705e53d45d2ce51ac.jpg?0.3154167084707382" alt=""></swiper-slide>
-    <swiper-slide><img src="http://www.jh-buy.com/appTpls/app/wapindex/banner/1/img/51cc1fe2482aab10aaf40190bc8f5549.jpg?0.10799478418561459" alt=""></swiper-slide>
+    <swiper-slide v-if="index.indexOf('banner')!=-1" v-for="(item,index) in goods" :key="index"><img @click="go('/goodsDetail/'+index)" :src="item.cover" alt=""></swiper-slide>
     <!-- Optional controls -->
   </swiper>
-  <h3>羊绒外套<router-link to="/">更多></router-link></h3>
+  <h3>热门商品</h3>
   <div>
-    <goodsCard></goodsCard>
-    <goodsCard></goodsCard>
-    <goodsCard></goodsCard>
+    <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1" v-for="(item,index) in goods"  :key="index">
+    <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
+    </router-link>
   </div>
   </div>
 </template>
@@ -18,15 +17,17 @@
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import goodsCard from '@/components/goodsCard'
+import goods from '../../data/goods.json'
 export default {
   data() {
     return {
       swiperOption: {
         loop:true,
          autoplay: {
-          delay:3000
+          delay:5000
          }
-        }
+        },
+      goods:goods
     }
   },
   components: {
@@ -42,7 +43,12 @@ export default {
   created() {
     setTimeout(() => { this.$progress.hide() }, 0);
   },
-  beforeCreate() {}
+  beforeCreate() {},
+  methods:{
+    go(url){
+      this.$router.push({ path: url })
+    }
+  }
 };
 
 </script>

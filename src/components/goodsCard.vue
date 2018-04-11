@@ -1,12 +1,16 @@
 <template>
-  <router-link to="" class="goodsCard" v-lazy-container="{ selector: 'img' }">
-    <img data-src="http://www.jh-buy.com//upload_imgs/goods/f940d91c-d7b2-4957-8e52-1bceb6842339/logo/logo.png" alt="">
-    <p><span>欸分阶级</span></p>
-    <div>￥600元</div>
-  </router-link>
+  <div class="goodsCard" v-lazy-container="{ selector: 'img' }">
+    <img :data-src="src" alt="">
+    <p><span>{{name}}</span></p>
+    <div></div>
+  </div>
 </template>
 <script>
 export default {
+  props: {
+      name:"",
+      src:""
+    },
   data() {
     return {
       //msg:"报错"

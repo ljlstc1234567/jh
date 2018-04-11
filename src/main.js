@@ -21,8 +21,8 @@ if ('addEventListener' in document) {
 
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  error: '../static/imgs/taller.png',
-  loading: '../static/imgs/taller.png',
+  error: '../static/imgs/defualt.png',
+  loading: '../static/imgs/defualt.png',
   attempt: 1,
   throttleWait:300
 });

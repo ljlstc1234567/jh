@@ -9,11 +9,15 @@
     	<div class="title"><span v-if="goodsInfo.isJhSelf==1">[自营]</span>{{goodsInfo.goodsName}}</div>
     	<!-- <a href="javascript:;" class="goods-favirate"><i></i></a> -->
     </div>
-    <h2 class="goods-price">￥{{goodsInfo.goodsPrice}}</h2>
+    <!-- <h2 class="goods-price">￥{{goodsInfo.goodsPrice}}</h2>
 	 <flexbox class="goods-sale">
       <flexbox-item><span>编码&nbsp;:</span>{{goodsInfo.goodsSn}}</flexbox-item>
       <flexbox-item><span>销量&nbsp;:</span>{{goodsInfo.sellCount}}件</flexbox-item>
-    </flexbox>
+    </flexbox> -->
+
+    <div class="detail-img">
+      <img :src="item" alt="" v-for="(item,index) in banner" :key="index">
+    </div>
   </div>
 </template>
 <script>
@@ -28,7 +32,7 @@ export default {
       swiperOption: {
         loop: true,
         autoplay: {
-          delay: 3000
+          delay: 5000
         }
       },
       banner:[],
@@ -54,8 +58,8 @@ export default {
   created() {
   	setTimeout(() => { this.$progress.hide() }, 0);
     console.log(goods) ;
-    this.banner = goods["id"+this.$route.params.id].banner
-    this.goodsInfo = goods["id"+this.$route.params.id].goodsInfo
+    this.banner = goods[this.$route.params.id].banner
+    this.goodsInfo = goods[this.$route.params.id].goodsInfo
   },
   beforeCreate() {
   	//获取banner信息
@@ -149,7 +153,15 @@ export default {
 	word-wrap: break-word;
     word-break: break-all;
 }
-
+.detail-img{
+  padding: 10px;
+  img{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
 </style>
 <style lang="less">
 .detail img{

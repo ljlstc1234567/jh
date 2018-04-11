@@ -22,7 +22,8 @@ export default {
    },
    data(){
    	return {
-   	}
+   	
+    }
    },
   created(){
     //console.log(this.$route.path.split("/")) ;
@@ -30,7 +31,8 @@ export default {
   },
   methods:{
     back(){
-      this.$route.back() ;
+      this.$router.go(-1) ;
+
     }
   }
 };
