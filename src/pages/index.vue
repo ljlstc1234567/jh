@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-import 'swiper/dist/css/swiper.css'
+import 'swiper/dist/css/swiper.min.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import goodsCard from '@/components/goodsCard'
 import goods from '../../data/goods.json'
