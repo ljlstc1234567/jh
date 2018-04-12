@@ -47,6 +47,7 @@ export default {
       line-height: 15px;
       font-size: 14px;
       color: #666;
+      text-overflow: ellipsis;
       overflow: hidden;
     }
   }
