@@ -45,6 +45,7 @@ export default {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       line-height: 15px;
+      height: 30px;
       font-size: 14px;
       color: #666;
       text-overflow: ellipsis;
