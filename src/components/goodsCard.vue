@@ -39,7 +39,7 @@ export default {
     display: -webkit-flex;
     align-items: center;
     height: 30px;
-
+    overflow: hidden;
     span {
       display: -webkit-box;
       -webkit-box-orient: vertical;
