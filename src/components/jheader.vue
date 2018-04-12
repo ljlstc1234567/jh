@@ -1,7 +1,7 @@
 <template>
   <div class="header">
   	<a href="javascript:;" @click="back" class="back"><i v-if="visible"></i></a>
-  	<span v-if="title=='首页'"><img :src="imgsrc" alt=""></span>
+  	<span v-if="title=='首页'"><img :src="imgsrc" alt="">1</span>
     <span v-else>{{title}}</span>
   	<div>
   	<slot name="rightMenu" />
