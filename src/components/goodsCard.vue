@@ -38,7 +38,7 @@ export default {
     display: flex;
     display: -webkit-flex;
     align-items: center;
-    height: 30px;
+    height: 29px;
     overflow: hidden;
     span {
       display: -webkit-box;
