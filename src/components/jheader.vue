@@ -57,8 +57,8 @@ export default {
     line-height: 50px;
 	}
   img{
-    margin-top: 5px;
-    height: 40px;
+    margin-top: 10px;
+    height: 30px;
   }
   .back{
     &:active{
