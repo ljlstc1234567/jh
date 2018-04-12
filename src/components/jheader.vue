@@ -1,13 +1,15 @@
 <template>
   <div class="header">
   	<a href="javascript:;" @click="back" class="back"><i v-if="visible"></i></a>
-  	<span>{{title}}</span>
+  	<span v-if="title=='首页'"><img :src="imgsrc" alt=""></span>
+    <span v-else>{{title}}</span>
   	<div>
   	<slot name="rightMenu" />
     </div>
   </div>
 </template>
 <script>
+import imgsrc from '../../static/imgs/logo.png'
 export default {
 	props:{
   	 title: {
@@ -22,7 +24,7 @@ export default {
    },
    data(){
    	return {
-   	
+   	  imgsrc
     }
    },
   created(){
@@ -54,6 +56,10 @@ export default {
 		width: 50px;
     line-height: 50px;
 	}
+  img{
+    margin-top: 5px;
+    height: 40px;
+  }
   .back{
     &:active{
       background-color: darken(@main-color, 10%);
