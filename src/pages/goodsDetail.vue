@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-bottom: 60px;visibility: hidden;">
+  <div style="padding-bottom: 60px;">
     <swiper class="myswiper" :options="swiperOption" ref="mySwiper" @someSwiperEvent="">
       <!-- slides -->
       <swiper-slide v-for="(item,index) in banner" :key="index"><img :src="item" alt=""></swiper-slide>
