@@ -6,7 +6,7 @@
     <!-- Optional controls -->
   </swiper>
   <h3>热门商品</h3>
-  <div>
+  <div class="clearfix">
     <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1" v-for="(item,index) in goods"  :key="index">
     <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
     </router-link>
