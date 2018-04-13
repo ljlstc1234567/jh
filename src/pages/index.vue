@@ -17,7 +17,14 @@
     <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
     </router-link>
   </div>
+  <h3>店铺地址</h3>
+  <div class="map">
+    <a href="http://f.amap.com/2AB9O_00735YO" target="_blank">
+      <img src="../../static/imgs/map.png" alt="" />
+    </a>
   </div>
+  </div>
+  
 </template>
 <script>
 import 'swiper/dist/css/swiper.min.css'
@@ -116,6 +123,12 @@ h3{
     img{
       width: 100%;
     }
+  }
+}
+.map{
+  padding:10px;
+  img{
+    width:100%;
   }
 }
 </style>

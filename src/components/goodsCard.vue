@@ -36,18 +36,13 @@ export default {
     display: flex;
     display: -webkit-flex;
     align-items: center;
-    height: 29px;
-    overflow: hidden;
     span {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      
       line-height: 15px;
-      height: 30px;
+     
       font-size: 14px;
       color: #666;
-      text-overflow: ellipsis;
-      overflow: hidden;
+     
     }
   }
   div {
