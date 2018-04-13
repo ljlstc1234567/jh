@@ -12,7 +12,7 @@ export default new Router({
       path: '/',
       name: 'index',
       component: index,
-      meta: { title: '首页'}
+      meta: { title: '衣佳人女装店'}
     },
     {
       path: '/goodsDetail/:id',

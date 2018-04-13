@@ -7,7 +7,13 @@
   </swiper>
   <h3>热门商品</h3>
   <div class="clearfix">
-    <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1" v-for="(item,index) in goods"  :key="index">
+    <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1&&index.replace('id','')<7" v-for="(item,index) in goods"  :key="index">
+    <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
+    </router-link>
+  </div>
+  <h3>每日特惠</h3>
+  <div class="clearfix">
+    <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1&&index.replace('id','')>6" v-for="(item,index) in goods"  :key="index">
     <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
     </router-link>
   </div>
