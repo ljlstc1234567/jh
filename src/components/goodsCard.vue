@@ -26,10 +26,8 @@ export default {
 @import "../../static/variables.less";
 .goodsCard {
   display: inline-block;
-  width: 47%;
-  margin-left: 2%;
+  width: 100%;
   margin-bottom: 20px;
-  float: left;
   text-align: left;
   img {
     width: 100%;

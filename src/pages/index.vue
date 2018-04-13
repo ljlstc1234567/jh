@@ -103,4 +103,19 @@ h3{
     font-size:14px;
   }
 }
+.waterfall{
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -moz-column-gap:10px;
+  -webkit-column-gap:10px;
+  column-gap:10px;
+  padding: 10px;
+  a{
+    display: block;
+    img{
+      width: 100%;
+    }
+  }
+}
 </style>
