@@ -1,11 +1,9 @@
 <template>
   <div>
-    <swiper class="myswiper" :options="swiperOption" ref="mySwiper" @someSwiperEvent="">
-    <!-- slides -->
+    <!-- <swiper class="myswiper" :options="swiperOption" ref="mySwiper" @someSwiperEvent="">
     <swiper-slide v-if="index.indexOf('banner')!=-1" v-for="(item,index) in goods" :key="index"><img @click="go('/goodsDetail/'+index)" :src="item.cover" alt=""></swiper-slide>
-    <!-- Optional controls -->
-  </swiper>
-  <h3>热门商品</h3>
+  </swiper> -->
+  <h3>新款到店</h3>
   <div class="clearfix waterfall">
     <router-link :to="'/goodsDetail/'+index" v-if="index.indexOf('banner')==-1&&index.replace('id','')<7" v-for="(item,index) in goods"  :key="index">
     <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
@@ -17,11 +15,10 @@
     <goodsCard  :src="item.cover" :name="item.goodsInfo.goodsName"></goodsCard>
     </router-link>
   </div>
-  <h3>店铺地址</h3>
   <div class="map">
-    <a href="http://f.amap.com/2AB9O_00735YO" target="_blank">
-      <img src="../../static/imgs/map.png" alt="" />
-    </a>
+     <img src="../../static/imgs/onecode.png" alt="" /> 
+      <div>店铺地址：<br />北京市丰台区南苑路15号</div>
+      
   </div>
   </div>
   
@@ -126,9 +123,20 @@ h3{
   }
 }
 .map{
+  border-top:1px dotted #ccc;
   padding:10px;
+  display:flex;
+  display:-webkit-flex;
+  div{
+    text-align:left;
+    flex: 1;
+    -webkit-flex: 1;
+  }
+
   img{
-    width:100%;
+    width:100px;
+    height:100px;
+    margin-right:20px;
   }
 }
 </style>

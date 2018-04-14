@@ -2,7 +2,7 @@
   <div class="header">
   	<a href="javascript:;" @click="back" class="back"><i v-if="visible"></i></a>
   	<span v-if="title=='首页'"><img :src="imgsrc" alt=""></span>
-    <span v-else>{{title}}</span>
+    <span v-else><b>{{title}}</b></span>
   	<div>
   	<slot name="rightMenu" />
     </div>
