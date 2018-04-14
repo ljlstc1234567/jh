@@ -17,7 +17,7 @@
   </div>
   <div class="map">
      <img src="../../static/imgs/onecode.png" alt="" /> 
-      <div>店铺地址：<br />北京市丰台区南苑路15号</div>
+      <div><a href="http://f.amap.com/2AB9O_00735YO" target="_blank">店铺地址：<br />北京市丰台区南苑路15号</a></div>
       
   </div>
   </div>
@@ -131,6 +131,9 @@ h3{
     text-align:left;
     flex: 1;
     -webkit-flex: 1;
+    a{
+      color:#333;
+    }
   }
 
   img{
